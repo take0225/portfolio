@@ -1,9 +1,7 @@
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
+
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 4%;
@@ -34,4 +32,3 @@ header .header-list a {
 header .header-list a:hover {
   opacity: 0.8;
 }
-/*# sourceMappingURL=style.css.map */
