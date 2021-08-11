@@ -1,23 +1,38 @@
+@charset "UTF-8";
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/*------------ ヘッダー---------------*/
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 4%;
+      justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 header a {
   text-decoration: none;
-  color: #000;
+  color: white;
+  font-family: cursive;
 }
 
 header .header-logo {
   width: 125px;
   height: 40px;
-  margin-top: 5px;
+  margin: 10px 0;
 }
 
 header .header-list {
@@ -25,7 +40,7 @@ header .header-list {
 }
 
 header .header-list a {
-  color: #383e46;
+  color: white;
   font-size: 14px;
   text-decoration: none;
   padding: 20px;
@@ -34,4 +49,65 @@ header .header-list a {
 header .header-list a:hover {
   opacity: 0.8;
 }
-/*# sourceMappingURL=style.css.map */
+
+/* ---------------メインビジュアル--------------*/
+#mainvisual img {
+  height: 800px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*----------アバウト---------*/
+#about {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#about .about-title {
+  display: inline-block;
+  margin-bottom: 60px;
+  border-bottom: 1px solid #000;
+  font-family: fantasy;
+  font-size: 2rem;
+}
+
+#about .about-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#about .about-content .about-img {
+  width: 30%;
+}
+
+#about .about-content .about-img img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+
+#about .about-content .about-text {
+  width: 70%;
+  text-align-last: left;
+}
+
+/*-----作品--------------*/
+#works {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#works .works-title {
+  display: inline-block;
+  margin-bottom: 60px;
+  border-bottom: 1px solid #000;
+  font-family: fantasy;
+  font-size: 2rem;
+}
