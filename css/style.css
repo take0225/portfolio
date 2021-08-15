@@ -14,7 +14,7 @@ header {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -54,7 +54,7 @@ header .header-list a:hover {
 #mainvisual img {
   height: 800px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 /*----------アバウト---------*/
@@ -76,11 +76,11 @@ header .header-list a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #about .about-content .about-img {
@@ -117,7 +117,7 @@ header .header-list a:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   list-style: none;
 }
 
@@ -126,6 +126,5 @@ header .header-list a:hover {
   height: 300px;
   border: 1px solid #000;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
-/*# sourceMappingURL=style.css.map */
