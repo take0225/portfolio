@@ -111,3 +111,20 @@ header .header-list a:hover {
   font-family: fantasy;
   font-size: 2rem;
 }
+
+#works .works-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style: none;
+}
+
+#works .works-list img {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #000;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
