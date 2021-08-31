@@ -8,19 +8,26 @@ img {
   margin: 0 auto;
 }
 
+/*----------レスポンシブ----------*/
 /*------------ ヘッダー---------------*/
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   position: fixed;
   width: 100%;
   z-index: 100;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 767px) {
+  header {
+    display: block;
+  }
 }
 
 header a {
@@ -35,8 +42,20 @@ header .header-logo {
   margin: 10px 0;
 }
 
+@media (max-width: 767px) {
+  header .header-logo {
+    margin-left: 20px;
+  }
+}
+
 header .header-list {
   margin-top: 15px;
+}
+
+@media (max-width: 767px) {
+  header .header-list {
+    display: none;
+  }
 }
 
 header .header-list a {
@@ -52,9 +71,9 @@ header .header-list a:hover {
 
 /* ---------------メインビジュアル--------------*/
 #mainvisual img {
-  height: 800px;
+  height: 90vh;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 /*----------アバウト---------*/
@@ -76,11 +95,11 @@ header .header-list a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #about .about-content .about-img {
@@ -116,9 +135,19 @@ header .header-list a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style: none;
+}
+
+#works .works-list li {
+  width: calc(100% / 3);
+}
+
+@media (max-width: 767px) {
+  #works .works-list li {
+    width: 100%;
+  }
 }
 
 #works .works-list img {
@@ -126,5 +155,5 @@ header .header-list a:hover {
   height: 300px;
   border: 1px solid #000;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
