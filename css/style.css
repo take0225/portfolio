@@ -3,157 +3,101 @@ img {
   width: 100%;
 }
 
+/*----------レスポンシブ----------*/
 .container {
-  max-width: 1000px;
+  max-width: 900px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
-/*----------レスポンシブ----------*/
+body {
+  font-family: "Corben", cursive;
+}
+
 /*------------ ヘッダー---------------*/
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   position: fixed;
-  width: 100%;
-  z-index: 100;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 767px) {
-  header {
-    display: block;
-  }
-}
-
-header a {
-  text-decoration: none;
-  color: white;
-  font-family: cursive;
-}
-
-header .header-logo {
-  width: 125px;
-  height: 40px;
-  margin: 10px 0;
-}
-
-@media (max-width: 767px) {
-  header .header-logo {
-    margin-left: 20px;
-  }
-}
-
-header .header-list {
-  margin-top: 15px;
-}
-
-@media (max-width: 767px) {
-  header .header-list {
-    display: none;
-  }
-}
-
-header .header-list a {
-  color: white;
-  font-size: 14px;
-  text-decoration: none;
-  padding: 20px;
-}
-
-header .header-list a:hover {
-  opacity: 0.8;
-}
-
-/* ---------------メインビジュアル--------------*/
-#mainvisual img {
-  height: 90vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-/*----------アバウト---------*/
-#about {
-  margin-top: 60px;
+  width: 300px;
+  height: 100vh;
+  border-right: 1px solid #000;
   text-align: center;
 }
 
-#about .about-title {
-  display: inline-block;
-  margin-bottom: 60px;
-  border-bottom: 1px solid #000;
-  font-family: fantasy;
-  font-size: 2rem;
+header .header-wrapper {
+  margin-top: 100px;
+  padding: 0 50px;
 }
 
-#about .about-content {
+header .header-nav {
+  margin-bottom: 30px;
+}
+
+header .header-nav li {
+  list-style: none;
+  padding-bottom: 30px;
+}
+
+header .header-nav li:last-child {
+  padding: 0;
+}
+
+header .header-nav li a {
+  color: #000;
+  text-decoration: none;
+}
+
+header .header-sns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#about .about-content .about-img {
-  width: 30%;
-}
-
-#about .about-content .about-img img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-}
-
-#about .about-content .about-text {
-  width: 70%;
-  text-align-last: left;
-}
-
-/*-----作品--------------*/
-#works {
-  margin-top: 60px;
-  text-align: center;
-}
-
-#works .works-title {
-  display: inline-block;
-  margin-bottom: 60px;
-  border-bottom: 1px solid #000;
-  font-family: fantasy;
-  font-size: 2rem;
-}
-
-#works .works-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   list-style: none;
 }
 
-#works .works-list li {
-  width: calc(100% / 3);
+header .header-sns li {
+  width: 35%;
 }
 
-@media (max-width: 767px) {
-  #works .works-list li {
-    width: 100%;
-  }
+header .header-sns .twitter {
+  color: #6ca3f6;
 }
 
-#works .works-list img {
-  width: 300px;
-  height: 300px;
-  border: 1px solid #000;
-  -o-object-fit: cover;
-     object-fit: cover;
+header .header-sns .instagram {
+  color: #c93abb;
 }
+
+header .header-sns .facebook {
+  color: #0056b2;
+}
+
+/*----------メイン-----------------*/
+main {
+  margin-left: 300px;
+  height: 5000px;
+}
+
+main #home {
+  position: relative;
+  background-image: url(/img/rocky-mountains-3717220_1920.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+main #home .home-title {
+  position: absolute;
+  top: 50%;
+  /*親要素を起点に上から50%*/
+  left: 50%;
+  /*親要素を起点に左から50%*/
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  /*要素の大きさの半分ずつを戻す*/
+  text-shadow: 1px 1px 0 #666, 2px 2px 0 #666, 3px 3px 0 #666;
+  font-size: 100px;
+  color: #fff;
+}
+
