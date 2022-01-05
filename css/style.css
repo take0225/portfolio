@@ -15,40 +15,85 @@ body {
 }
 
 /*------------ ヘッダー---------------*/
-header {
+#header {
   position: fixed;
   top: 0;
-  left: 0;
+  overflow-y: auto;
   width: 300px;
-  height: 100vh;
+  height: 100%;
+  padding: 50px;
   border-right: 1px solid #000;
+  background-color: #fff;
+}
+
+@media (max-width: 950px) {
+  #header {
+    width: 100%;
+    height: 80px;
+    padding: 0;
+    z-index: 10;
+  }
+}
+
+#header .site-title {
+  display: none;
+}
+
+@media (max-width: 950px) {
+  #header .site-title {
+    display: inline-block;
+    position: relative;
+    left: 20px;
+    top: 15px;
+  }
+}
+
+#header .site-title a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+}
+
+#header #nav {
   text-align: center;
 }
 
-header .header-wrapper {
-  margin-top: 100px;
-  padding: 0 50px;
+@media (max-width: 950px) {
+  #header #nav {
+    width: 300px;
+    background: #fff;
+    padding: 25px;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    opacity: 0;
+    overflow-y: auto;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 20;
+  }
 }
 
-header .header-nav {
+#header #nav .nav-menu {
   margin-bottom: 30px;
 }
 
-header .header-nav li {
+#header #nav .nav-menu li {
   list-style: none;
   padding-bottom: 30px;
 }
 
-header .header-nav li:last-child {
+#header #nav .nav-menu li:last-child {
   padding: 0;
 }
 
-header .header-nav li a {
+#header #nav .nav-menu li a {
   color: #000;
   text-decoration: none;
 }
 
-header .header-sns {
+#header #nav .nav-sns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,26 +103,69 @@ header .header-sns {
   list-style: none;
 }
 
-header .header-sns li {
+#header #nav .nav-sns li {
   width: 35%;
 }
 
-header .header-sns .twitter {
+#header #nav .nav-sns .twitter {
   color: #6ca3f6;
 }
 
-header .header-sns .instagram {
+#header #nav .nav-sns .instagram {
   color: #c93abb;
 }
 
-header .header-sns .facebook {
+#header #nav .nav-sns .facebook {
   color: #0056b2;
+}
+
+@media (max-width: 950px) {
+  #header .humburger {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 20;
+  }
+}
+
+@media (max-width: 950px) {
+  #header .humburger span {
+    width: 30px;
+    height: 2px;
+    background-color: #121212;
+    border-radius: 4px;
+    display: block;
+    position: absolute;
+    left: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  #header .humburger span:nth-child(1) {
+    top: 3px;
+  }
+  #header .humburger span:nth-child(2) {
+    top: 14px;
+  }
+  #header .humburger span:nth-child(3) {
+    bottom: 3px;
+  }
 }
 
 /*----------メイン-----------------*/
 main {
   margin-left: 300px;
   height: 5000px;
+}
+
+@media (max-width: 950px) {
+  main {
+    margin-left: 0;
+  }
 }
 
 main #home {
@@ -100,4 +188,7 @@ main #home .home-title {
   font-size: 100px;
   color: #fff;
 }
+
+/*----------フッター-------------*/
+/*# sourceMappingURL=style.css.map */
 
