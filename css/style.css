@@ -3,15 +3,22 @@ img {
   width: 100%;
 }
 
+body {
+  font-family: "Corben", cursive;
+}
+
 /*----------レスポンシブ----------*/
+/*------共通---------*/
 .container {
   max-width: 900px;
   padding: 0 20px;
   margin: 0 auto;
 }
 
-body {
-  font-family: "Corben", cursive;
+.section__title {
+  text-align: center;
+  font-size: 1.5rem;
+  padding-bottom: 50px;
 }
 
 /*------------ ヘッダー---------------*/
@@ -35,23 +42,31 @@ body {
   }
 }
 
-#header .site-title {
+#header .header__title {
   display: none;
 }
 
 @media (max-width: 950px) {
-  #header .site-title {
+  #header .header__title {
     display: inline-block;
     position: relative;
     left: 20px;
-    top: 15px;
+    top: 20px;
+    font-size: 1.2rem;
   }
 }
 
-#header .site-title a {
+#header .header__title a {
   color: #000;
   text-decoration: none;
   display: block;
+}
+
+@media (max-width: 950px) {
+  #header.open #nav {
+    left: 0;
+    opacity: 1;
+  }
 }
 
 #header #nav {
@@ -60,7 +75,7 @@ body {
 
 @media (max-width: 950px) {
   #header #nav {
-    width: 300px;
+    width: 100%;
     background: #fff;
     padding: 25px;
     position: fixed;
@@ -75,25 +90,25 @@ body {
   }
 }
 
-#header #nav .nav-menu {
+#header #nav .nav__menu {
   margin-bottom: 30px;
 }
 
-#header #nav .nav-menu li {
+#header #nav .nav__menu li {
   list-style: none;
   padding-bottom: 30px;
 }
 
-#header #nav .nav-menu li:last-child {
+#header #nav .nav__menu li:last-child {
   padding: 0;
 }
 
-#header #nav .nav-menu li a {
+#header #nav .nav__menu li a {
   color: #000;
   text-decoration: none;
 }
 
-#header #nav .nav-sns {
+#header #nav .nav__sns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,24 +118,24 @@ body {
   list-style: none;
 }
 
-#header #nav .nav-sns li {
+#header #nav .nav__sns li {
   width: 35%;
 }
 
-#header #nav .nav-sns .twitter {
+#header #nav .nav__sns .twitter {
   color: #6ca3f6;
 }
 
-#header #nav .nav-sns .instagram {
+#header #nav .nav__sns .instagram {
   color: #c93abb;
 }
 
-#header #nav .nav-sns .facebook {
+#header #nav .nav__sns .facebook {
   color: #0056b2;
 }
 
 @media (max-width: 950px) {
-  #header .humburger {
+  #header .hamburger {
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -134,7 +149,7 @@ body {
 }
 
 @media (max-width: 950px) {
-  #header .humburger span {
+  #header .hamburger span {
     width: 30px;
     height: 2px;
     background-color: #121212;
@@ -145,15 +160,29 @@ body {
     -webkit-transition: 0.5s;
     transition: 0.5s;
   }
-  #header .humburger span:nth-child(1) {
+  #header .hamburger span:nth-child(1) {
     top: 3px;
   }
-  #header .humburger span:nth-child(2) {
+  #header .hamburger span:nth-child(2) {
     top: 14px;
   }
-  #header .humburger span:nth-child(3) {
+  #header .hamburger span:nth-child(3) {
     bottom: 3px;
   }
+}
+
+#header.open span:nth-child(1) {
+  -webkit-transform: translateY(9px) rotate(-315deg);
+          transform: translateY(9px) rotate(-315deg);
+}
+
+#header.open span:nth-child(2) {
+  opacity: 0;
+}
+
+#header.open span:nth-child(3) {
+  -webkit-transform: translateY(-12px) rotate(315deg);
+          transform: translateY(-12px) rotate(315deg);
 }
 
 /*----------メイン-----------------*/
@@ -170,12 +199,14 @@ main {
 
 main #home {
   position: relative;
-  background-image: url(/img/rocky-mountains-3717220_1920.jpg);
+  background-image: url(../img/rocky-mountains-3717220_1920.jpg);
   background-size: cover;
+  background-position: center center;
   height: 100vh;
+  margin-bottom: 100px;
 }
 
-main #home .home-title {
+main #home .home__title {
   position: absolute;
   top: 50%;
   /*親要素を起点に上から50%*/
@@ -185,10 +216,61 @@ main #home .home-title {
           transform: translateY(-50%) translateX(-50%);
   /*要素の大きさの半分ずつを戻す*/
   text-shadow: 1px 1px 0 #666, 2px 2px 0 #666, 3px 3px 0 #666;
-  font-size: 100px;
+  font-size: 5rem;
   color: #fff;
 }
 
-/*----------フッター-------------*/
-/*# sourceMappingURL=style.css.map */
+@media (max-width: 950px) {
+  main #home .home__title {
+    font-size: 1.75rem;
+  }
+}
 
+main #about {
+  height: 1000px;
+  margin-bottom: 100px;
+}
+
+main #about .about__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 950px) {
+  main #about .about__inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+main #about .about__inner .about__inner--img {
+  width: 45%;
+}
+
+@media (max-width: 950px) {
+  main #about .about__inner .about__inner--img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 950px) {
+  main #about .about__inner .about__inner--img img {
+    border-radius: 50%;
+  }
+}
+
+main #about .about__inner .about__inner__text {
+  width: 45%;
+}
+
+@media (max-width: 950px) {
+  main #about .about__inner .about__inner__text {
+    width: 100%;
+  }
+}
+
+/*----------フッター-------------*/
