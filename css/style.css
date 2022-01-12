@@ -234,19 +234,18 @@ main #about .about__inner {
 
 @media (max-width: 950px) {
   main #about .about__inner {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
 main #about .about__inner .about__inner--img {
   width: 45%;
-}
-
-@media (max-width: 950px) {
-  main #about .about__inner .about__inner--img {
-    width: 100%;
-  }
 }
 
 @media (max-width: 950px) {
@@ -367,8 +366,8 @@ main #works h2 {
 }
 
 main #contact {
-  height: 1000px;
   text-align: center;
+  margin-bottom: 100px;
 }
 
 main #contact .form input {
@@ -382,6 +381,12 @@ main #contact .form input {
   overflow: hidden;
 }
 
+@media (max-width: 950px) {
+  main #contact .form input {
+    width: 100%;
+  }
+}
+
 main #contact .form textarea {
   display: block;
   width: 400px;
@@ -389,6 +394,12 @@ main #contact .form textarea {
   padding: 0 20px;
   border: 1px solid #000;
   border-radius: 5px;
+}
+
+@media (max-width: 950px) {
+  main #contact .form textarea {
+    width: 100%;
+  }
 }
 
 main #contact .form .btn {
@@ -399,7 +410,52 @@ main #contact .form .btn {
   border: 1px solid #000;
   border-radius: 5px;
   overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+main #contact .form .btn:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 /*----------フッター-------------*/
-/*# sourceMappingURL=style.css.map */
+#footer {
+  margin-left: 300px;
+  text-align: center;
+}
+
+@media (max-width: 950px) {
+  #footer {
+    margin-left: 0;
+  }
+}
+
+#footer .copyright {
+  font-size: 0.2rem;
+  padding: 10px 0;
+}
+
+#footer #page-top a {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+#footer #page-top a::after {
+  position: absolute;
+  top: 40%;
+  left: 38%;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  border-width: 0 7px 7px 7px;
+}
